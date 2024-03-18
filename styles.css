@@ -13,7 +13,7 @@ header {
 }
 
 h1 {
-    color: smokewhite; /* Cambiado a smokewhite */
+    color: smokewhite;
     margin-bottom: 20px;
 }
 
@@ -26,30 +26,77 @@ main {
     justify-content: center;
 }
 
+.marca-vinos {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.marca-vinos h2 {
+    color: #5c2d28;
+    font-size: 24px;
+}
+
+.lista-vinos {
+    width: 100%;
+    text-align: center;
+}
+
 ul {
     list-style-type: none;
     padding: 0;
 }
 
-.card {
-    background-color: #ee7d60;
+.tarjeta {
+    background-color: #eec4b8;
     margin: 0 10px 20px;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-  
-    
+    position: relative;
 }
 
-.card strong {
+.tarjeta img {
+    display: block;
+    margin: 0 auto;
+    width: 25%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.tarjeta strong {
     color: #5c2d28;
 }
 
-a {
-    color: #8c3a3a;
-    text-decoration: none;
+.botones-cantidad {
+    margin-top: 10px;
 }
 
-a:hover {
-    text-decoration: underline;
+.botones-cantidad button {
+    background-color: #8c3a3a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.carrito {
+    background-color: #dfe76ae1;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.derechosReservados-pie {
+    text-align: center;
+    background-color: #5c2d28;
+    color: white;
+    padding: 20px 0;
+}
+
+.derechosReservados-pie p {
+    max-width: 800px;
+    margin: 0 auto;
 }

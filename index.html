@@ -1,40 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProyectoJsDiegoAraujo53935</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
-        <h1>Productos de Vinos</h1>
+        <h1>Bodegas del Sol</h1>
     </header>
     <main>
-        <ul>
-            <li class="card">
-                <strong>Nombre:</strong> Vino Tinto Malbec<br>
-                <strong>Precio:</strong> $209<br>
-                <strong>Descripción:</strong> Tinto Malbec PUEBLO DEL SOL 75 L.
-            </li>
-            <li class="card">
-                <strong>Nombre:</strong> Vino Blanco<br>
-                <strong>Precio:</strong> $249<br>
-                <strong>Descripción:</strong> Blanco PUEBLO DEL SOL 75 L.
-            </li>
-            <li class="card">
-                <strong>Nombre:</strong> Vino Tinto Tannat<br>
-                <strong>Precio:</strong> $209<br>
-                <strong>Descripción:</strong> Tinto Tannat PUEBLO DEL SOL 75 L.
-            </li>
-            <li class="card">
-                <strong>Nombre:</strong> Vino Rosado Merlot<br>
-                <strong>Precio:</strong> $169<br>
-                <strong>Descripción:</strong> Rosado Merlot PUEBLO DEL SOL 75 L.
-            </li>
-        </ul>
+        <!--Entiendo que tanto: "strong","br", entre otras... son mecanicas no usadas ya, a su vez por lo entendido en la clase de DOM vamos a hacer la mayoria de modificaciones de cara a la tercera preentrega con dicho sistema, por ende no fui al detalle en ese sentido, de igual forma entiendo la importancia de las "buenas costumbres", desde ya pido disculpas. -->
+        <div class="marca-vinos">
+            <h2>Vinos Pueblo Del Sol</h2>
+        </div>
+        <div class="lista-vinos">
+            <ul>
+                <li class="tarjeta">
+                    <img src="./assets/img/tintoMalbec.webp" alt="Vino Tinto Malbec">
+                    <strong>Nombre:</strong> Vino Tinto Malbec<br>
+                    <strong>Precio:</strong> $209<br>
+                    <strong>Descripción:</strong> Tinto Malbec PUEBLO DEL SOL 75 L.
+                    <div class="botones-cantidad">
+                        <button class="restar">-</button>
+                        <input type="text" value="1" readonly>
+                        <button class="sumar">+</button>
+                    </div>
+                </li>
+                <li class="tarjeta">
+                    <img src="./assets/img/blanco.webp" alt="Vino Blanco">
+                    <strong>Nombre:</strong> Vino Blanco<br>
+                    <strong>Precio:</strong> $249<br>
+                    <strong>Descripción:</strong> Blanco PUEBLO DEL SOL 75 L.
+                    <div class="botones-cantidad">
+                        <button class="restar">-</button>
+                        <input type="text" value="1" readonly>
+                        <button class="sumar">+</button>
+                    </div>
+                </li>
+                <li class="tarjeta">
+                    <img src="./assets/img/tintoTannat.webp" alt="Vino Tinto Tannat">
+                    <strong>Nombre:</strong> Vino Tinto Tannat<br>
+                    <strong>Precio:</strong> $209<br>
+                    <strong>Descripción:</strong> Tinto Tannat PUEBLO DEL SOL 75 L.
+                    <div class="botones-cantidad">
+                        <button class="restar">-</button>
+                        <input type="text" value="1" readonly>
+                        <button class="sumar">+</button>
+                    </div>
+                </li>
+                <li class="tarjeta">
+                    <img src="./assets/img/merlotRose.webp" alt="Vino Rosado Merlot">
+                    <strong>Nombre:</strong> Vino Rosado Merlot<br>
+                    <strong>Precio:</strong> $169<br>
+                    <strong>Descripción:</strong> Rosado Merlot PUEBLO DEL SOL 75 L.
+                    <div class="botones-cantidad">
+                        <button class="restar">-</button>
+                        <input type="text" value="1" readonly>
+                        <button class="sumar">+</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="carrito">
+            <h2>Sus productos agregados son:</h2>
+            <!-- a futuro se tendria que mostrar los productos agregados al carrito -->
+        </div>
     </main>
-    <footer></footer>
+    <footer>
+        <div class="derechosReservados-pie">
+            <p>&copy; 2024 Proyecto de Vinos Pueblo Del Sol. Todos los derechos reservados.</p>
+        </div>
+    </footer>
     <script src="main.js"></script>
 </body>
+
 </html>
