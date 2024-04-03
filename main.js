@@ -1,5 +1,5 @@
 /*PREENTREGA 3
-Objetivos generales:
+/*Objetivos generales:
 
 Codificar funciones de procesos esenciales y notificación de resultados por HTML, añadiendo interacción al simulador.(NO)
 Ampliar y refinar el flujo de trabajo del script en términos de captura de eventos, procesamiento del simulador y notificación de resultados en forma de salidas por HTML, modificando el DOM.(NO)
@@ -15,7 +15,8 @@ Se debe entregar:
 
 Implementación con uso de JSON y Storage.(NO)
 Modificación del DOM y detección de eventos de usuario.(NO)
-------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------ 
+*/
 
 /*const productosVinos = [
   { nombre: "Vino Tinto Malbec", precio: 209, descripcion: "Tinto Malbec PUEBLO DEL SOL 75 L." },

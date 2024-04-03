@@ -107,6 +107,17 @@ body {
     margin: 0;
     padding: 20px;
   }
+  header {
+    background-color: #5c2d28;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: smokewhite;
+    margin-bottom: 20px;
+}
   
   #productos-container,
   #carrito-container {
@@ -130,5 +141,16 @@ body {
   button:hover {
     background-color: #45a049;
   }
+  .derechosReservados-pie {
+    text-align: center;
+    background-color: #5c2d28;
+    color: white;
+    padding: 20px 0;
+}
+
+.derechosReservados-pie p {
+    max-width: 800px;
+    margin: 0 auto;
+}
   
   
