@@ -1,6 +1,6 @@
-<!--
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,40 +8,18 @@
   <link rel="stylesheet" href="styles.css">
   <script src="main.js" defer></script>
 </head>
+
 <body>
   <header>
     <h1>Bodegas del Sol</h1>
   </header>
   <main>
-    <div id="productos-container">
-      <ul>
-        <li class="tarjeta">
-          <img src="./assets/img/tintoMalbec.webp" alt="Vino Tinto Malbec">
-          <strong>Nombre:</strong> Vino Tinto Malbec<br>
-          <strong>Precio:</strong> $209<br>
-          <strong>Descripción:</strong> Tinto Malbec PUEBLO DEL SOL 75 L.
-        </li>
-        <li class="tarjeta">
-          <img src="./assets/img/blanco.webp" alt="Vino Blanco">
-          <strong>Nombre:</strong> Vino Blanco<br>
-          <strong>Precio:</strong> $249<br>
-          <strong>Descripción:</strong> Blanco PUEBLO DEL SOL 75 L.
-        </li>
-        <li class="tarjeta">
-          <img src="./assets/img/tintoTannat.webp" alt="Vino Tinto Tannat">
-          <strong>Nombre:</strong> Vino Tinto Tannat<br>
-          <strong>Precio:</strong> $209<br>
-          <strong>Descripción:</strong> Tinto Tannat PUEBLO DEL SOL 75 L.
-        </li>
-        <li class="tarjeta">
-          <img src="./assets/img/merlotRose.webp" alt="Vino Rosado Merlot">
-          <strong>Nombre:</strong> Vino Rosado Merlot<br>
-          <strong>Precio:</strong> $169<br>
-          <strong>Descripción:</strong> Rosado Merlot PUEBLO DEL SOL 75 L.
-        </li>
-      </ul>
+    <div id="productos-container" class="tarjetas-container">
     </div>
     <div id="carrito-container">
+    </div>
+    <div id="total-container">
+      <p>Total a pagar: $<span id="total">0</span></p>
     </div>
   </main>
   <footer>
@@ -50,33 +28,6 @@
     </div>
   </footer>
 </body>
-</html>-->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ProyectoJsDiegoAraujo53935</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="main.js" defer></script>
-</head>
-<body>
-    <header>
-        <h1>Bodegas del Sol</h1>
-    </header>
-    <main>
-        <div id="productos-container">
-            <!-- Los productos se agregarán dinámicamente aquí -->
-        </div>
-        <div id="carrito-container">
-        </div>
-    </main>
-    <footer>
-        <div class="derechosReservados-pie">
-            <p>&copy; 2024 Proyecto de Vinos Pueblo Del Sol. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-</body>
+
+
 </html>
-
-
