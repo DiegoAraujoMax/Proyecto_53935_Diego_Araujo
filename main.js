@@ -16,72 +16,7 @@ Se debe entregar:
 Implementación con uso de JSON y Storage.(NO)
 Modificación del DOM y detección de eventos de usuario.(NO)
 ------------------------------------------------------------------------------------------------ 
-*/
-
-/*const productosVinos = [
-  { nombre: "Vino Tinto Malbec", precio: 209, descripcion: "Tinto Malbec PUEBLO DEL SOL 75 L." },
-  { nombre: "Vino Blanco", precio: 249, descripcion: "Blanco  PUEBLO DEL SOL 75 L." },
-  { nombre: "Vino Tinto Tannat", precio: 209, descripcion: "Tinto Tannat PUEBLO DEL SOL 75 L." },
-  { nombre: "Vino Rosado Merlot", precio: 169, descripcion: "Rosado Merlot PUEBLO DEL SOL 75 L." },
-];
-
-let carritoDeCompras = [];
-
-function mostrarProductos() {
-  let mensajeVinos = 'Vinos disponibles en bodega(Recuerde su numero correspodiente para agegar):\n\n';
-  productosVinos.forEach((producto, indice) => {
-    mensajeVinos += `${indice + 1}. ${producto.nombre} - Importe: $${producto.precio}\n`;
-  });
-  alert(mensajeVinos);
-}
-
-function agregarProductoAlCarrito(indice) {
-  if (indice >= 0 && indice < productosVinos.length) {
-    carritoDeCompras.push(productosVinos[indice]);
-    alert(`"${productosVinos[indice].nombre}" ha sido agregado a su carrito.`);
-  } else {
-    alert("La opción seleccionada no es válida, vuelva a intentar.");
-  }
-}
-
-function mostrarCarrito() {
-  if (carritoDeCompras.length === 0) {
-    alert("El carrito de compras está vacío.");
-  } else {
-    let mensajeCarrito = 'Contenido del carrito:\n\n';
-    carritoDeCompras.forEach((producto, indice) => {
-      mensajeCarrito += `${indice + 1}. ${producto.nombre} - Importe: $${producto.precio}\n`;
-    });
-    alert(mensajeCarrito);
-  }
-}
-
-function calcularTotal() {
-  let total = carritoDeCompras.reduce((acumulador, producto) => acumulador + producto.precio, 0);
-  alert(`Total de su compra: $${total}`);
-}
-
-function seleccionarProductos() {
-  let continuar = true;
-
-  while (continuar) {
-    mostrarProductos();
-    let indiceProducto = parseInt(prompt("Ingrese el número del vino que desea agregar al carrito de compras(presionar 0 para ir al carrito):"));
-
-    if (indiceProducto === 0) {
-      continuar = false;
-    } else {
-      agregarProductoAlCarrito(indiceProducto - 1);
-    }
-  }
-
-  mostrarCarrito();
-  calcularTotal();
-}
-
-seleccionarProductos();*/
-
-
+*//*
 const productosVinos = [
   { nombre: "Vino Tinto Malbec", precio: 209, descripcion: "Tinto Malbec PUEBLO DEL SOL 75 L." },
   { nombre: "Vino Blanco", precio: 249, descripcion: "Blanco  PUEBLO DEL SOL 75 L." },
@@ -94,7 +29,7 @@ let carritoDeCompras = JSON.parse(localStorage.getItem('carrito')) || [];
 function mostrarProductos() {
   const productosContainer = document.getElementById('productos-container');
   productosContainer.innerHTML = '';
-  
+
   productosVinos.forEach((producto, indice) => {
     const productoElement = document.createElement('div');
     productoElement.innerHTML = `${indice + 1}. ${producto.nombre} - Importe: $${producto.precio} <button onclick="agregarProductoAlCarrito(${indice})">Agregar</button>`;
@@ -123,9 +58,63 @@ function mostrarCarrito() {
   }
 }
 
-function calcularTotal() {
-  let total = carritoDeCompras.reduce((acumulador, producto) => acumulador + producto.precio, 0);
-  alert(`Total de su compra: $${total}`);
+window.onload = () => {
+  mostrarProductos();
+  mostrarCarrito();
+};
+*/
+const productosVinos = [
+  { nombre: "Vino Tinto Malbec", precio: 209, descripcion: "Tinto Malbec PUEBLO DEL SOL 75 L." },
+  { nombre: "Vino Blanco", precio: 249, descripcion: "Blanco  PUEBLO DEL SOL 75 L." },
+  { nombre: "Vino Tinto Tannat", precio: 209, descripcion: "Tinto Tannat PUEBLO DEL SOL 75 L." },
+  { nombre: "Vino Rosado Merlot", precio: 169, descripcion: "Rosado Merlot PUEBLO DEL SOL 75 L." },
+];
+
+let carritoDeCompras = JSON.parse(localStorage.getItem('carrito')) || [];
+
+function mostrarProductos() {
+  const productosContainer = document.getElementById('productos-container');
+  productosContainer.innerHTML = '';
+  
+  productosVinos.forEach((producto, indice) => {
+    const productoElement = document.createElement('div');
+    productoElement.classList.add('tarjeta');
+    productoElement.innerHTML = `
+      <img src="./assets/img/${producto.nombre.replace(/\s/g, '')}.webp" alt="${producto.nombre}">
+      <strong>Nombre:</strong> ${producto.nombre}<br>
+      <strong>Precio:</strong> $${producto.precio}<br>
+      <strong>Descripción:</strong> ${producto.descripcion}<br>
+      <button onclick="agregarProductoAlCarrito(${indice})">Agregar</button>
+      <button onclick="quitarProducto(${indice})">Quitar</button>`;
+    productosContainer.appendChild(productoElement);
+  });
+}
+
+function agregarProductoAlCarrito(indice) {
+  carritoDeCompras.push(productosVinos[indice]);
+  localStorage.setItem('carrito', JSON.stringify(carritoDeCompras));
+  mostrarCarrito();
+}
+
+function quitarProducto(indice) {
+  carritoDeCompras.splice(indice, 1);
+  localStorage.setItem('carrito', JSON.stringify(carritoDeCompras));
+  mostrarCarrito();
+}
+
+function mostrarCarrito() {
+  const carritoContainer = document.getElementById('carrito-container');
+  carritoContainer.innerHTML = '';
+
+  if (carritoDeCompras.length === 0) {
+    carritoContainer.textContent = "El carrito de compras está vacío.";
+  } else {
+    let mensajeCarrito = 'Contenido del carrito:\n\n';
+    carritoDeCompras.forEach((producto, indice) => {
+      mensajeCarrito += `${indice + 1}. ${producto.nombre} - Importe: $${producto.precio}\n`;
+    });
+    carritoContainer.textContent = mensajeCarrito;
+  }
 }
 
 window.onload = () => {
