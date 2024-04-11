@@ -1,22 +1,4 @@
-/*PREENTREGA 3
-/*Objetivos generales:
 
-Codificar funciones de procesos esenciales y notificación de resultados por HTML, añadiendo interacción al simulador.(si)
-Ampliar y refinar el flujo de trabajo del script en términos de captura de eventos, procesamiento del simulador y notificación de resultados en forma de salidas por HTML, modificando el DOM.(si)
-
-
-Objetivos específicos:
-
-Definir eventos a manejar y su función de respuesta.(si)
-Modificar el DOM, ya sea para definir elementos al cargar la página o para realizar salidas de un procesamiento.(si)
-Almacenar datos (clave-valor) en el Storage y recuperarlos.(si)
-
-Se debe entregar:
-
-Implementación con uso de JSON y Storage.(si)
-Modificación del DOM y detección de eventos de usuario.(si)
------------------------------------------------------------------------------------------------- 
-*/
 const productosVinos = [
   {
     nombre: "Vino Tinto Malbec",
