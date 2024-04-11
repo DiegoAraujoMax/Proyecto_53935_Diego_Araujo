@@ -1,3 +1,4 @@
+
 const productosVinos = [
   {
     nombre: "Vino Tinto Malbec",
@@ -21,31 +22,50 @@ const productosVinos = [
   },
 ];
 
-let carritoDeCompras = [];
+let carritoDeCompras = JSON.parse(localStorage.getItem("carrito")) || [];
 
 function mostrarProductos() {
-  let mensajeVinos =
-    "Vinos disponibles en bodega(Recuerde su numero correspodiente para agegar):\n\n";
+  const productosContainer = document.getElementById("productos-container");
+  productosContainer.innerHTML = "";
+
   productosVinos.forEach((producto, indice) => {
-    mensajeVinos += `${indice + 1}. ${producto.nombre} - Importe: $${
-      producto.precio
-    }\n`;
+    const productoElement = document.createElement("div");
+    productoElement.classList.add("tarjeta");
+    productoElement.innerHTML = `
+      <img src="./assets/img/${producto.nombre.replace(/\s/g, "")}.webp" alt="${
+      producto.nombre
+    }">
+      <strong>Nombre:</strong> ${producto.nombre}<br>
+      <strong>Precio:</strong> $${producto.precio}<br>
+      <strong>Descripción:</strong> ${producto.descripcion}<br>
+      <button onclick="agregarProductoAlCarrito(${indice})">Agregar</button>
+      <button onclick="quitarProducto('${producto.nombre}')">Quitar</button>`;
+    productosContainer.appendChild(productoElement);
   });
-  alert(mensajeVinos);
 }
 
 function agregarProductoAlCarrito(indice) {
-  if (indice >= 0 && indice < productosVinos.length) {
-    carritoDeCompras.push(productosVinos[indice]);
-    alert(`"${productosVinos[indice].nombre}" ha sido agregado a su carrito.`);
-  } else {
-    alert("La opción seleccionada no es válida, vuelva a intentar.");
-  }
+  carritoDeCompras.push(productosVinos[indice]);
+  localStorage.setItem("carrito", JSON.stringify(carritoDeCompras));
+  mostrarCarrito();
+  calcularTotal();
+}
+
+function quitarProducto(nombreProducto) {
+  carritoDeCompras = carritoDeCompras.filter(
+    (producto) => producto.nombre !== nombreProducto
+  );
+  localStorage.setItem("carrito", JSON.stringify(carritoDeCompras));
+  mostrarCarrito();
+  calcularTotal();
 }
 
 function mostrarCarrito() {
+  const carritoContainer = document.getElementById("carrito-container");
+  carritoContainer.innerHTML = "";
+
   if (carritoDeCompras.length === 0) {
-    alert("El carrito de compras está vacío.");
+    carritoContainer.textContent = "El carrito de compras está vacío.";
   } else {
     let mensajeCarrito = "Contenido del carrito:\n\n";
     carritoDeCompras.forEach((producto, indice) => {
@@ -53,38 +73,21 @@ function mostrarCarrito() {
         producto.precio
       }\n`;
     });
-    alert(mensajeCarrito);
+    carritoContainer.textContent = mensajeCarrito;
   }
 }
 
 function calcularTotal() {
-  let total = carritoDeCompras.reduce(
-    (acumulador, producto) => acumulador + producto.precio,
-    0
-  );
-  alert(`Total de su compra: $${total}`);
+  const totalContainer = document.getElementById("total");
+  let total = 0;
+  carritoDeCompras.forEach((producto) => {
+    total += producto.precio;
+  });
+  totalContainer.textContent = total;
 }
 
-function seleccionarProductos() {
-  let continuar = true;
-
-  while (continuar) {
-    mostrarProductos();
-    let indiceProducto = parseInt(
-      prompt(
-        "Ingrese el número del vino que desea agregar al carrito de compras(presionar 0 para ir al carrito):"
-      )
-    );
-
-    if (indiceProducto === 0) {
-      continuar = false;
-    } else {
-      agregarProductoAlCarrito(indiceProducto - 1);
-    }
-  }
-
+window.onload = () => {
+  mostrarProductos();
   mostrarCarrito();
   calcularTotal();
-}
-
-seleccionarProductos();
+};
