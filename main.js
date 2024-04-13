@@ -1,4 +1,8 @@
 
+
+
+
+/*
 const productosVinos = [
   {
     nombre: "Vino Tinto Malbec",
@@ -90,4 +94,4 @@ window.onload = () => {
   mostrarProductos();
   mostrarCarrito();
   calcularTotal();
-};
+};*/
