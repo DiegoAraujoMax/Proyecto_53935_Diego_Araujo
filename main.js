@@ -91,3 +91,28 @@ window.onload = () => {
   mostrarCarrito();
   calcularTotal();
 };*/
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  fetch('carrito.json')
+    .then(respuesta => respuesta.json())
+    .then(data => {
+      const mainContent = document.getElementById('main-content');
+
+      data.forEach(item => {
+        const cardHtml = `
+          <div class="card d-flex justify-content-between m-3 rounded " style="width: 18rem;" >
+            <img src="./assets/img/${item.nombre.replace(/\s+/g, '')}.webp" class="card-img-top" alt="${item.nombre}">
+            <div class="card-body d-flex flex-column align-items-center pt-4">
+              <h5 class="card-title">${item.nombre}</h5>
+              <p class="card-text pb-2">Precio: $${item.precio}</p>
+              <p class="card-text pb-2">${item.descripcion}</p>
+              <a href="#" class="btn btn-secondary btn-active ">Añadir</a>
+            </div>
+          </div>
+        `;
+       mainContent.insertAdjacentHTML('beforeend', cardHtml);
+      });
+    });
+});
+

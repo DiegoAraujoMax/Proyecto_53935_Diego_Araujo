@@ -1,0 +1,33 @@
+[
+    {
+      "nombre": "Vino Sauvignon Blanco",
+      "precio": 249,
+      "descripcion": "Un vino blanco con aromas florales y notas cítricas, perfecto para acompañar platos ligeros o disfrutar en una tarde soleada."
+    },
+    {
+      "nombre": "Vino Rosado Merlot",
+      "precio": 169,
+      "descripcion": "Un vino rosado suave y afrutado, con toques de frutos rojos y una delicada acidez. Ideal para maridar con ensaladas frescas o platos de pescado."
+    },
+    {
+      "nombre": "Vino Tinto Malbec",
+      "precio": 209,
+      "descripcion": "Un vino tinto intenso y robusto, con sabores a moras y especias. Ideal para carnes a la parrilla o platos de pasta con salsas rojas."
+    },
+    {
+      "nombre": "Vino Tinto Tannat",
+      "precio": 209,
+      "descripcion": "Un vino tinto de cuerpo completo con taninos firmes y aromas a frutos negros maduros. Perfecto para acompañar carnes asadas o quesos fuertes."
+    },
+    {
+      "nombre": "Tinto Cabernet Sauvignon",
+      "precio": 349,
+      "descripcion": "Un vino tinto seco y equilibrado, con notas a cassis y vainilla. Ideal para carnes rojas a la parrilla o platos de caza."
+    },
+    {
+      "nombre": "Tinto Cabernet Sauvignon Roble",
+      "precio": 349,
+      "descripcion": "Un vino tinto envejecido en barricas de roble, con sabores a ciruelas y chocolate negro. Perfecto para acompañar platos elaborados y quesos añejos."
+    }
+  ]
+  
